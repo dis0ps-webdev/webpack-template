@@ -12,6 +12,10 @@ CSS suffixed with '.local.css' will be localized, as Webpack's Mini CSS loader w
 
 ## Javascript
 
+### Typescript
+
+Support for Typescript is added in via Babel.  Webpack configurations were adjusted to allow for all other functions to work with Typescript files (e.g. CSS imports).
+
 ### Pages and Components
 
 Component-based Architecture is followed whenever possible, breaking the application into two main categories:
