@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/pages/index.js",
+  entry: "./src/pages/index.ts",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
@@ -23,7 +23,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(j|t)sx?$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -50,7 +50,6 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-
         use: ["file-loader"],
       },
     ],
