@@ -2,6 +2,12 @@
 
 This is my current directory structure and Webpack configuration, gleaned from working through exercises in [The Odin Project](https://www.theodinproject.com). 
 
+## Usage
+
+1. ```git clone <repo_name>```
+2. ```npm install```
+3. ``` npm run start:dev```
+
 ## Global CSS
 
 CSS suffixed with '.global.css' will affect the entire application.  All global CSS should be placed in the css/ directory.
