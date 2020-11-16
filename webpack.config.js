@@ -5,6 +5,9 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
+  resolve: {
+    extensions: [".ts", ".tsx", ".js"],
+  },
   entry: "./src/pages/index.ts",
   output: {
     filename: "bundle.js",

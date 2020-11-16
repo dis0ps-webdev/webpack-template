@@ -1,5 +1,12 @@
 {
   "compilerOptions": {
     "noEmit": true
-  }
+  },
+  "include": ["src/**/*.tsx?"],
+  "exclude": [
+    "node_modules",
+    "**/__snapshots__/*",
+    "**/*.snap",
+    "**/*.test.jsx?"
+  ]
 }
