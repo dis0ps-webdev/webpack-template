@@ -50,4 +50,9 @@ Images are copied as-is into the final distribution.  Pre-processing of images m
 
 Like images, HTML is copied directly into the final distribution.  
 
+# Troubleshooting
+If there are missing declaration issues in Visual Studio Code, restart the Typescript server to see if it helps alleviate:
 
+```
+Command Palette -> Restart TS Server
+```
