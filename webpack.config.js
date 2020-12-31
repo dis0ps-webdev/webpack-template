@@ -33,7 +33,7 @@ module.exports = {
         },
       },
       {
-        test: /\.local.css$/,
+        test: /\.local.s?css$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -43,13 +43,14 @@ module.exports = {
               modules: true,
             },
           },
+          "sass-loader"
         ],
-        exclude: /\.global\.css$/,
+        exclude: /\.global\.s?css$/,
       },
       {
-        test: /\.global.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
-        exclude: /\.local\.css$/,
+        test: /\.global.s?css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader","sass-loader"],
+        exclude: /\.local\.s?css$/,
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
