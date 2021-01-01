@@ -1,8 +1,8 @@
 class Component {
   protected outputElement: Element;
   protected targetContainer: Element;
-  protected domLocation: Element;
-  protected debounceTimer: number;
+  protected domLocation: Element | null;
+  protected debounceTimer: number | null;
   
   constructor(container) {
     this.targetContainer = container;
