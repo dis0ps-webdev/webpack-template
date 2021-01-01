@@ -3,8 +3,8 @@ class Component {
   protected targetContainer: Element;
   protected domLocation: Element | null;
   protected debounceTimer: number | null;
-  
-  constructor(container) {
+
+  constructor(container: Element) {
     this.targetContainer = container;
     this.domLocation = null;
     this.debounceTimer = null;
@@ -18,7 +18,11 @@ class Component {
     */
   }
 
-  protected _bindWindowDebounce(event, handler, delay) {
+  protected _bindWindowDebounce(
+    event: string,
+    handler: (data: any) => void,
+    delay: number
+  ) {
     window.addEventListener(event, () => {
       if (this.debounceTimer != null) {
         window.clearTimeout(this.debounceTimer);
@@ -27,11 +31,11 @@ class Component {
     });
   }
 
-  protected _bindWindowHandler(event, handler) {
+  protected _bindWindowHandler(event: string, handler: (data: any) => void) {
     window.addEventListener(event, handler);
   }
 
-  protected _bindHandler(event, handler) {
+  protected _bindHandler(event: string, handler: (data: any) => void) {
     this.outputElement.addEventListener(event, handler);
   }
 
