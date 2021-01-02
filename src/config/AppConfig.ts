@@ -1,1 +1,1 @@
-export const containerDiv = document.querySelector("#container");
+export const containerDiv = <Element>document.querySelector("#container");
