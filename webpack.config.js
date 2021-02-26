@@ -2,9 +2,9 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
 
-module.exports = {
-  mode: "development",
+var config = {
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
   },
@@ -43,13 +43,13 @@ module.exports = {
               modules: true,
             },
           },
-          "sass-loader"
+          "sass-loader",
         ],
         exclude: /\.global\.s?css$/,
       },
       {
         test: /\.global.s?css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader","sass-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
         exclude: /\.local\.s?css$/,
       },
       {
@@ -58,4 +58,23 @@ module.exports = {
       },
     ],
   },
+};
+
+module.exports = (env, argv) => {
+  if (argv.mode === "development") {
+    config.mode = "development";
+    config.devtool = "inline-source-map";
+  }
+
+  if (argv.mode === "production") {
+    config.mode = "production";
+    config.plugins.push(
+      new CompressionPlugin({
+        algorithm: "gzip",
+        test: /\.(js|css)$/,
+      })
+    );
+  }
+
+  return config;
 };
