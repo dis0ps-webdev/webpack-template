@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "firefox",
+      "request": "launch",
+      "reAttach": true,
+      "name": "Launch Firefox Debugger",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}",
+      "pathMappings": [
+        {
+          "url": "webpack://*/src",
+          "path": "${workspaceFolder}/src"
+        }
+      ]
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome Debugger",
+      "port": 9222,
+      "url": "http://localhost:8080/",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "breakOnLoad": true
+    }
+  ]
+}
